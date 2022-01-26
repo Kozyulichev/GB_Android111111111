@@ -1,96 +1,116 @@
 <?xml version="1.0" encoding="utf-8"?>
 <GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
-    android:layout_margin="16dp"
     android:columnCount="4">
 
     <Button
+        android:id="@+id/button_all_clean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_all_clean" />
 
-    <Button
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button_clean"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:drawableEnd="@drawable/ic_baseline_backspace_24" />
+        app:icon="@drawable/ic_baseline_backspace_24"
+        app:iconGravity="textStart"
+        app:iconPadding="0dp" />
 
     <Button
+        android:id="@+id/button_percent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_percent" />
 
     <Button
+        android:id="@+id/button_division"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_division" />
 
     <Button
+        android:id="@+id/button_seven"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_seven" />
 
     <Button
+        android:id="@+id/button_eight"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_eight" />
 
     <Button
+        android:id="@+id/button_nine"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_nine" />
 
     <Button
+        android:id="@+id/button_multiplication"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_multiplication" />
 
     <Button
+        android:id="@+id/button_four"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_four" />
 
     <Button
+        android:id="@+id/button_five"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_five" />
 
     <Button
+        android:id="@+id/button_six"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_six" />
 
     <Button
+        android:id="@+id/button_subtraction"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_subtraction" />
 
     <Button
+        android:id="@+id/button_one"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_one" />
 
     <Button
+        android:id="@+id/button_two"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_two" />
 
     <Button
+        android:id="@+id/button_three"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_three" />
 
     <Button
+        android:id="@+id/button_addition"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_addition" />
 
     <Button
+        android:id="@+id/button_dot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_dot" />
 
     <Button
+        android:id="@+id/button_zero"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_columnSpan="2"
@@ -98,6 +118,7 @@
         android:text="@string/button_zero" />
 
     <Button
+        android:id="@+id/button_equal"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/button_equal" />
