@@ -3,7 +3,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_margin="4dp"
     android:orientation="vertical"
     tools:context=".MainActivity">
 
@@ -11,15 +10,14 @@
         android:id="@+id/text_operation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:textSize="40sp" />
+        android:layout_margin="2dp"
+        android:textSize="30sp" />
 
     <TextView
         android:id="@+id/text_input_and_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="6dp"
-        android:textSize="30sp" />
+        android:textSize="20sp" />
 
     <include layout="@layout/calculator_layout" />
 </LinearLayout>

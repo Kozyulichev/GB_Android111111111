@@ -23,6 +23,8 @@ public class MainActivity extends AppCompatActivity {
             division = false;
 
     private static final String ARG_NUMBERS = "ARG_NUMBERS";
+    private static final String ARG_TEXT_INPUT = "ARG_TEXT_INPUT";
+    private static final String ARG_TEXT_OP = "ARG_TEXT_OP";
 
     private DataAndOperations dataAndOperations;
 
@@ -31,15 +33,15 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        init();
+
         if (savedInstanceState == null) {
             dataAndOperations = new DataAndOperations();
         } else {
             dataAndOperations = savedInstanceState.getParcelable(ARG_NUMBERS);
+            textOperation.setText(savedInstanceState.getString(ARG_TEXT_OP));
+            textInputAndResult.setText(savedInstanceState.getString(ARG_TEXT_INPUT));
         }
-
-        init();
-
-        textOperation.setText();
 
         buttonDot.setOnClickListener(view -> {
             textInputAndResult.setText(textInputAndResult.getText().toString() + ".");
@@ -112,6 +114,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            dataAndOperations.setOperation("-");
             textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             subtraction = true;
@@ -122,6 +125,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            dataAndOperations.setOperation("*");
             textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             multiplication = true;
@@ -132,6 +136,7 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            dataAndOperations.setOperation("/");
             textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             division = true;
@@ -143,19 +148,19 @@ public class MainActivity extends AppCompatActivity {
             }
             dataAndOperations.setNumTwo(Float.parseFloat(textInputAndResult.getText().toString()));
             if (addition) {
-                textOperation.setText(String.valueOf(dataAndOperations.addition()));
+                textInputAndResult.setText(String.valueOf(dataAndOperations.addition()));
                 addition = false;
             }
             if (subtraction) {
-                textOperation.setText(String.valueOf(dataAndOperations.subtraction()));
+                textInputAndResult.setText(String.valueOf(dataAndOperations.subtraction()));
                 subtraction = false;
             }
             if (multiplication) {
-                textOperation.setText(String.valueOf(dataAndOperations.multiplication()));
+                textInputAndResult.setText(String.valueOf(dataAndOperations.multiplication()));
                 multiplication = false;
             }
             if (division) {
-                textOperation.setText(String.valueOf(dataAndOperations.division()));
+                textInputAndResult.setText(String.valueOf(dataAndOperations.division()));
                 division = false;
             }
         });
@@ -214,5 +219,7 @@ public class MainActivity extends AppCompatActivity {
         super.onSaveInstanceState(outState);
 
         outState.putParcelable(ARG_NUMBERS, dataAndOperations);
+        outState.putString(ARG_TEXT_OP, textOperation.getText().toString());
+        outState.putString(ARG_TEXT_INPUT, textInputAndResult.getText().toString());
     }
 }
