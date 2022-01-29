@@ -21,7 +21,8 @@ public class MainActivity extends AppCompatActivity {
             subtraction = false,
             multiplication = false,
             division = false;
-    private Float numOne, numTwo;
+
+    private static final String ARG_NUMBERS = "ARG_NUMBERS";
 
     private DataAndOperations dataAndOperations;
 
@@ -30,12 +31,18 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        if (savedInstanceState == null) {
+            dataAndOperations = new DataAndOperations();
+        } else {
+            dataAndOperations = savedInstanceState.getParcelable(ARG_NUMBERS);
+        }
+
         init();
 
-        dataAndOperations = new DataAndOperations();
+        textOperation.setText();
 
         buttonDot.setOnClickListener(view -> {
-            textInputAndResult.setText(textInputAndResult.getText() + ".");
+            textInputAndResult.setText(textInputAndResult.getText().toString() + ".");
             textOperation.setText(textOperation.getText() + ".");
         });
 
@@ -93,8 +100,9 @@ public class MainActivity extends AppCompatActivity {
             if (textInputAndResult.getText().toString().equals("")) {
                 return;
             }
-            textOperation.setText(textOperation.getText() + "+");
-            numOne = Float.parseFloat(textInputAndResult.getText() + "");
+            dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            dataAndOperations.setOperation("+");
+            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             addition = true;
         });
@@ -103,8 +111,8 @@ public class MainActivity extends AppCompatActivity {
             if (textInputAndResult.getText().toString().equals("")) {
                 return;
             }
-            textOperation.setText(textOperation.getText() + "-");
-            numOne = dataAndOperations.converter(textInputAndResult.getText().toString());
+            dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             subtraction = true;
         });
@@ -113,8 +121,8 @@ public class MainActivity extends AppCompatActivity {
             if (textInputAndResult.getText().toString().equals("")) {
                 return;
             }
-            textOperation.setText(textOperation.getText() + "*");
-            numOne = Float.parseFloat(textInputAndResult.getText() + "");
+            dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             multiplication = true;
         });
@@ -123,28 +131,31 @@ public class MainActivity extends AppCompatActivity {
             if (textInputAndResult.getText().toString().equals("")) {
                 return;
             }
-            textOperation.setText(textOperation.getText() + "/");
-            numOne = Float.parseFloat(textInputAndResult.getText() + "");
+            dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
+            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
             textInputAndResult.setText("");
             division = true;
         });
 
         buttonEqual.setOnClickListener(view -> {
-            numTwo = Float.parseFloat(textInputAndResult.getText() + "");
+            if (textInputAndResult.getText().toString().equals("")) {
+                return;
+            }
+            dataAndOperations.setNumTwo(Float.parseFloat(textInputAndResult.getText().toString()));
             if (addition) {
-                textOperation.setText(dataAndOperations.addition(numOne, numTwo) + "");
+                textOperation.setText(String.valueOf(dataAndOperations.addition()));
                 addition = false;
             }
             if (subtraction) {
-                textOperation.setText(dataAndOperations.subtraction(numOne, numTwo) + "");
+                textOperation.setText(String.valueOf(dataAndOperations.subtraction()));
                 subtraction = false;
             }
             if (multiplication) {
-                textOperation.setText(dataAndOperations.multiplication(numOne, numTwo) + "");
+                textOperation.setText(String.valueOf(dataAndOperations.multiplication()));
                 multiplication = false;
             }
             if (division) {
-                textOperation.setText(dataAndOperations.division(numOne, numTwo) + "");
+                textOperation.setText(String.valueOf(dataAndOperations.division()));
                 division = false;
             }
         });
@@ -165,11 +176,10 @@ public class MainActivity extends AppCompatActivity {
 
         buttonPercent.setOnClickListener(view -> {
             if (addition || subtraction || multiplication || division) {
-                float percent = Float.parseFloat(textInputAndResult.getText() + "");
-                float percentResult = numOne * percent / 100;
+                dataAndOperations.setNumTwo(Float.parseFloat(textInputAndResult.getText().toString()));
                 textInputAndResult.setText("");
-                textInputAndResult.setText(percentResult + "");
-                textOperation.setText(textOperation.getText() + "%");
+                textInputAndResult.setText(String.valueOf(dataAndOperations.percent()));
+                textOperation.setText(textOperation.getText().toString() + "%");
             }
         });
 
@@ -202,5 +212,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onSaveInstanceState(@NonNull Bundle outState) {
         super.onSaveInstanceState(outState);
+
+        outState.putParcelable(ARG_NUMBERS, dataAndOperations);
     }
 }
