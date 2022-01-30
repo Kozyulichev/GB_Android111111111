@@ -34,18 +34,9 @@ public class MainActivity extends AppCompatActivity {
     private Button buttonZero;
     private Button buttonEqual;
 
-    private Boolean addition = false;
-    private Boolean subtraction = false;
-    private Boolean multiplication = false;
-    private Boolean division = false;
-
     private static final String ARG_NUMBERS = "ARG_NUMBERS";
     private static final String ARG_TEXT_INPUT = "ARG_TEXT_INPUT";
     private static final String ARG_TEXT_OP = "ARG_TEXT_OP";
-    private static final String ARG_OPERATION_ADDITION = "ARG_OPERATION_ADDITION";
-    private static final String ARG_OPERATION_SUBTRACTION = "ARG_OPERATION_SUBTRACTION";
-    private static final String ARG_OPERATION_MULTIPLICATION = "ARG_OPERATION_MULTIPLICATION";
-    private static final String ARG_OPERATION_DIVISION = "ARG_OPERATION_DIVISION";
 
     private DataAndOperations dataAndOperations;
 
@@ -62,10 +53,6 @@ public class MainActivity extends AppCompatActivity {
             dataAndOperations = savedInstanceState.getParcelable(ARG_NUMBERS);
             textOperation.setText(savedInstanceState.getString(ARG_TEXT_OP));
             textInputAndResult.setText(savedInstanceState.getString(ARG_TEXT_INPUT));
-            //addition = savedInstanceState.getBoolean(ARG_OPERATION_ADDITION);
-            //subtraction = savedInstanceState.getBoolean(ARG_OPERATION_SUBTRACTION);
-            //multiplication = savedInstanceState.getBoolean(ARG_OPERATION_MULTIPLICATION);
-            //division = savedInstanceState.getBoolean(ARG_OPERATION_DIVISION);
         }
 
         buttonDot.setOnClickListener(view -> {
@@ -201,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonPercent.setOnClickListener(view -> {
-            if (addition || subtraction || multiplication || division) {
+            if (dataAndOperations.getAddition() || dataAndOperations.getSubtraction() || dataAndOperations.getMultiplication() || dataAndOperations.getDivision()) {
                 dataAndOperations.setNumTwo(Float.parseFloat(textInputAndResult.getText().toString()));
                 textInputAndResult.setText("");
                 textInputAndResult.setText(String.valueOf(dataAndOperations.percent()));
@@ -242,9 +229,5 @@ public class MainActivity extends AppCompatActivity {
         outState.putParcelable(ARG_NUMBERS, dataAndOperations);
         outState.putString(ARG_TEXT_OP, textOperation.getText().toString());
         outState.putString(ARG_TEXT_INPUT, textInputAndResult.getText().toString());
-        //outState.putBoolean(ARG_OPERATION_ADDITION, addition);
-        //outState.putBoolean(ARG_OPERATION_SUBTRACTION, subtraction);
-        //outState.putBoolean(ARG_OPERATION_MULTIPLICATION, multiplication);
-        //outState.putBoolean(ARG_OPERATION_DIVISION, division);
     }
 }
