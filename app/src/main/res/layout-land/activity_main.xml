@@ -11,12 +11,14 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="2dp"
+        android:fontFamily="@font/cursed_timer_ulil"
         android:textSize="30sp" />
 
     <TextView
         android:id="@+id/text_input_and_result"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:fontFamily="@font/cursed_timer_ulil"
         android:textSize="20sp" />
 
     <include layout="@layout/calculator_layout" />

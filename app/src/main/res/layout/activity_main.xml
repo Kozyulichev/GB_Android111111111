@@ -12,6 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
+        android:fontFamily="@font/cursed_timer_ulil"
         android:textSize="40sp" />
 
     <TextView
@@ -19,6 +20,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="6dp"
+        android:fontFamily="@font/cursed_timer_ulil"
         android:textSize="30sp" />
 
     <include layout="@layout/calculator_layout" />
