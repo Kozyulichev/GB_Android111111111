@@ -8,10 +8,10 @@ public class DataAndOperations implements Parcelable {
     private float numOne;
     private float numTwo;
 
-    private Boolean addition = false;
-    private Boolean subtraction = false;
-    private Boolean multiplication = false;
-    private Boolean division = false;
+    private boolean addition;
+    private boolean subtraction;
+    private boolean multiplication;
+    private boolean division;
 
     protected DataAndOperations(Parcel in) {
         numOne = in.readFloat();
