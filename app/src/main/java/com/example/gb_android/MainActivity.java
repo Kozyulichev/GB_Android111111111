@@ -11,16 +11,28 @@ import com.google.android.material.button.MaterialButton;
 
 public class MainActivity extends AppCompatActivity {
 
-    private TextView textInputAndResult, textOperation;
-    private Button buttonAllClean, buttonPercent, buttonDivision, buttonSeven, buttonEight,
-            buttonNine, buttonMultiplication, buttonFour, buttonFive, buttonSix, buttonSubtraction,
-            buttonOne, buttonTwo, buttonThree, buttonAddition, buttonDot, buttonZero, buttonEqual;
-    private MaterialButton buttonClean;
+    private TextView textInputAndResult;
+    private TextView textOperation;
 
-    private Boolean addition = false,
-            subtraction = false,
-            multiplication = false,
-            division = false;
+    private Button buttonClean;
+    private Button buttonAllClean;
+    private Button buttonPercent;
+    private Button buttonDivision;
+    private Button buttonSeven;
+    private Button buttonEight;
+    private Button buttonNine;
+    private Button buttonMultiplication;
+    private Button buttonFour;
+    private Button buttonFive;
+    private Button buttonSix;
+    private Button buttonSubtraction;
+    private Button buttonOne;
+    private Button buttonTwo;
+    private Button buttonThree;
+    private Button buttonAddition;
+    private Button buttonDot;
+    private Button buttonZero;
+    private Button buttonEqual;
 
     private static final String ARG_NUMBERS = "ARG_NUMBERS";
     private static final String ARG_TEXT_INPUT = "ARG_TEXT_INPUT";
@@ -103,10 +115,9 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
-            dataAndOperations.setOperation("+");
-            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
+            dataAndOperations.setAddition(true);
+            textOperation.setText(dataAndOperations.getNumOne() + "+");
             textInputAndResult.setText("");
-            addition = true;
         });
 
         buttonSubtraction.setOnClickListener(view -> {
@@ -114,10 +125,9 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
-            dataAndOperations.setOperation("-");
-            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
+            dataAndOperations.setSubtraction(true);
+            textOperation.setText(dataAndOperations.getNumOne() + "-");
             textInputAndResult.setText("");
-            subtraction = true;
         });
 
         buttonMultiplication.setOnClickListener(view -> {
@@ -125,10 +135,9 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
-            dataAndOperations.setOperation("*");
-            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
+            dataAndOperations.setMultiplication(true);
+            textOperation.setText(dataAndOperations.getNumOne() + "*");
             textInputAndResult.setText("");
-            multiplication = true;
         });
 
         buttonDivision.setOnClickListener(view -> {
@@ -136,10 +145,9 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumOne(Float.parseFloat(textInputAndResult.getText().toString()));
-            dataAndOperations.setOperation("/");
-            textOperation.setText(dataAndOperations.getNumOne() + dataAndOperations.getOperation());
+            dataAndOperations.setDivision(true);
+            textOperation.setText(dataAndOperations.getNumOne() + "/");
             textInputAndResult.setText("");
-            division = true;
         });
 
         buttonEqual.setOnClickListener(view -> {
@@ -147,21 +155,21 @@ public class MainActivity extends AppCompatActivity {
                 return;
             }
             dataAndOperations.setNumTwo(Float.parseFloat(textInputAndResult.getText().toString()));
-            if (addition) {
+            if (dataAndOperations.getAddition()) {
                 textInputAndResult.setText(String.valueOf(dataAndOperations.addition()));
-                addition = false;
+                dataAndOperations.setAddition(false);
             }
-            if (subtraction) {
+            if (dataAndOperations.getSubtraction()) {
                 textInputAndResult.setText(String.valueOf(dataAndOperations.subtraction()));
-                subtraction = false;
+                dataAndOperations.setSubtraction(false);
             }
-            if (multiplication) {
+            if (dataAndOperations.getMultiplication()) {
                 textInputAndResult.setText(String.valueOf(dataAndOperations.multiplication()));
-                multiplication = false;
+                dataAndOperations.setMultiplication(false);
             }
-            if (division) {
+            if (dataAndOperations.getDivision()) {
                 textInputAndResult.setText(String.valueOf(dataAndOperations.division()));
-                division = false;
+                dataAndOperations.setDivision(false);
             }
         });
 
@@ -180,7 +188,7 @@ public class MainActivity extends AppCompatActivity {
         });
 
         buttonPercent.setOnClickListener(view -> {
-            if (addition || subtraction || multiplication || division) {
+            if (dataAndOperations.getAddition() || dataAndOperations.getSubtraction() || dataAndOperations.getMultiplication() || dataAndOperations.getDivision()) {
                 dataAndOperations.setNumTwo(Float.parseFloat(textInputAndResult.getText().toString()));
                 textInputAndResult.setText("");
                 textInputAndResult.setText(String.valueOf(dataAndOperations.percent()));

@@ -5,9 +5,13 @@ import android.os.Parcelable;
 
 public class DataAndOperations implements Parcelable {
 
-    private float numOne, numTwo;
+    private float numOne;
+    private float numTwo;
 
-    private String operation;
+    private boolean addition;
+    private boolean subtraction;
+    private boolean multiplication;
+    private boolean division;
 
     protected DataAndOperations(Parcel in) {
         numOne = in.readFloat();
@@ -46,14 +50,6 @@ public class DataAndOperations implements Parcelable {
         this.numTwo = numTwo;
     }
 
-    public String getOperation() {
-        return operation;
-    }
-
-    public void setOperation(String operation) {
-        this.operation = operation;
-    }
-
     public float addition() {
         return numOne + numTwo;
     }
@@ -72,6 +68,38 @@ public class DataAndOperations implements Parcelable {
 
     public float percent() {
         return numOne * numTwo / 100;
+    }
+
+    public Boolean getAddition() {
+        return addition;
+    }
+
+    public void setAddition(Boolean addition) {
+        this.addition = addition;
+    }
+
+    public Boolean getSubtraction() {
+        return subtraction;
+    }
+
+    public void setSubtraction(Boolean subtraction) {
+        this.subtraction = subtraction;
+    }
+
+    public Boolean getMultiplication() {
+        return multiplication;
+    }
+
+    public void setMultiplication(Boolean multiplication) {
+        this.multiplication = multiplication;
+    }
+
+    public Boolean getDivision() {
+        return division;
+    }
+
+    public void setDivision(Boolean division) {
+        this.division = division;
     }
 
 
