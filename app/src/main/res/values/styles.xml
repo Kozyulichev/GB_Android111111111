@@ -27,11 +27,11 @@
         <item name="android:layout_margin">@dimen/text_view_margin</item>
         <item name="android:fontFamily">@font/cursed_timer_ulil</item>
         <item name="android:textSize">@dimen/operation_text_size</item>
-        <item name="android:textColor">@color/black</item>
+        <item name="android:textColor">?textColorForView</item>
     </style>
 
     <style name="TextOperation.Dark">
-        <item name="android:textColor">@color/white</item>
+        <item name="android:textColor">?textColorForView</item>
     </style>
 
     <style name="TextInput">
