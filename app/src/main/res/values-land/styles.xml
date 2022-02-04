@@ -1,29 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <style name="CalcButton">
+    <style name="CalcButton" parent="Widget.MaterialComponents.Button">
         <item name="backgroundTint">@color/teal_700</item>
         <item name="fontFamily">@font/teletactile</item>
+        <item name="android:gravity">center</item>
         <item name="cornerRadius">@dimen/corner_radius</item>
         <item name="android:textSize">@dimen/button_text_size</item>
-    </style>
-
-    <style name="CalcButton.Operation">
-        <item name="backgroundTint">#FF6600</item>
-    </style>
-
-    <style name="TextOperation">
-        <item name="android:layout_margin">@dimen/text_view_margin</item>
-        <item name="android:fontFamily">@font/cursed_timer_ulil</item>
-        <item name="android:textSize">@dimen/operation_text_size</item>
-        <item name="android:textColor">@color/black</item>
-    </style>
-
-    <style name="TextInput">
-        <item name="android:layout_margin">@dimen/text_view_margin</item>
-        <item name="android:fontFamily">@font/cursed_timer_ulil</item>
-        <item name="android:textSize">@dimen/input_text_size</item>
-        <item name="android:textColor">#EA0202</item>
     </style>
 
 </resources>

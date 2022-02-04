@@ -17,6 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_all_clean" />
 
     <com.google.android.material.button.MaterialButton
@@ -26,6 +27,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         app:icon="@drawable/ic_baseline_backspace_24"
         app:iconGravity="textStart"
         app:iconPadding="@dimen/icon_padding" />
@@ -37,6 +39,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_percent" />
 
     <com.google.android.material.button.MaterialButton
@@ -46,33 +49,34 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_division" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_seven"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_seven" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_eight"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_eight" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_nine"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_nine" />
 
     <com.google.android.material.button.MaterialButton
@@ -82,33 +86,34 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_multiplication" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_four"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_four" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_five"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_five" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_six"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_six" />
 
     <com.google.android.material.button.MaterialButton
@@ -118,33 +123,34 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_subtraction" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_one"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_one" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_two"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_two" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_three"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_three" />
 
     <com.google.android.material.button.MaterialButton
@@ -154,24 +160,25 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_addition" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_dot"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_dot" />
 
     <com.google.android.material.button.MaterialButton
         android:id="@+id/button_zero"
-        style="@style/CalcButton"
         android:layout_width="@dimen/keyboard_width"
         android:layout_height="wrap_content"
         android:layout_columnSpan="@integer/column_span_zero"
         android:layout_gravity="fill_horizontal"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_zero" />
 
     <com.google.android.material.button.MaterialButton
@@ -181,6 +188,7 @@
         android:layout_height="wrap_content"
         android:layout_columnWeight="@integer/column_weight"
         android:layout_gravity="fill"
+        android:layout_margin="@dimen/small_margin"
         android:text="@string/button_equal" />
 
 </GridLayout>

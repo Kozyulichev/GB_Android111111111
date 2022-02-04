@@ -15,7 +15,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        tools:text="41203-12-4-1" />
 
     <TextView
         android:id="@+id/text_input_and_result"
@@ -24,7 +25,8 @@
         android:layout_height="wrap_content"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/text_operation" />
+        app:layout_constraintTop_toBottomOf="@id/text_operation"
+        tools:text="41203-12-4-1" />
 
     <include layout="@layout/calculator_layout" />
 
